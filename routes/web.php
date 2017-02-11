@@ -22,3 +22,5 @@ Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('/admin', ['as' =>'admin', 'uses' => 'AdminController@index', 'middleware' => ['auth', 'admin']]);
 
+Route::get('/profile', ['as' =>'profile', 'uses' => 'UserController@profile']);
+Route::post('/profile', ['as' => 'profile', 'uses' => 'UserController@updateAvatar']);

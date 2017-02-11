@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -45,13 +45,18 @@
                     <li><a href="{{ route('admin') }}">Admin Panel</a></li>
                   @endif
                     
-                  <li class="dropdown">
+                  <li class="dropdown" style="position: relative; padding-left: 50px;">
+                      <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="height: 32px; width: 32px; position: absolute; top: 10px; left: 10px; border-radius: 50%">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                           {{ Auth::user()->name }} <span class="caret"></span>
                       </a>
                       
                       <ul class="dropdown-menu" role="menu">
                           <li>
+                              <a href="{{ route('profile') }}"
+                                  >
+                                  Profile
+                              </a>
                               <a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
